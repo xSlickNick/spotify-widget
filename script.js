@@ -86,7 +86,7 @@ async function GetCurrentlyPlaying(refreshInterval) {
 		// Refresh
 		setTimeout(() => {
 			GetCurrentlyPlaying()
-		}, 5000);
+		}, 1000);
 	}
 	catch (error)
 	{
@@ -236,4 +236,4 @@ if (hideAlbumArt) {
 ////////////////////////////////
 
 RefreshAccessToken();
-GetCurrentlyPlaying();
+GetCurrentlyPlaying();			// This is a recursive function, so just run it once

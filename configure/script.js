@@ -7,7 +7,8 @@ const urlParams = new URLSearchParams(queryString);
 
 const code = urlParams.get("code") || "";
 
-const redirect_uri = "https://nuttylmao.github.io/spotify-widget/configure";
+const baseURL = "https://nuttylmao.github.io/spotify-widget";
+const redirect_uri = `${baseURL}/configure`;
 let refresh_token = "";
 let access_token = "";
 let browserSourceURL = "";
