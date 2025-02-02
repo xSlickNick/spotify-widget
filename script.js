@@ -44,7 +44,7 @@ async function RefreshAccessToken() {
 	{
 		const responseData = await response.json();
 		console.debug(responseData);
-		refresh_token = responseData.refresh_token;			// Unsure if we need to replace the refresh_token but do it just in case
+		//refresh_token = responseData.refresh_token;			// Unsure if we need to replace the refresh_token but do it just in case
 		access_token = responseData.access_token;			// Save access token for all future API calls
 	}
 	else
