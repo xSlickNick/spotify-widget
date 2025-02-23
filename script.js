@@ -208,7 +208,7 @@ function SetVisibility(isVisible) {
 //////////////////////////////////////////////////////////////////////////////////////////
 
 let outer = document.getElementById('mainContainer'),
-	maxWidth = outer.clientWidth,
+	maxWidth = outer.clientWidth+50,
 	maxHeight = outer.clientHeight;
 
 window.addEventListener("resize", resize);
