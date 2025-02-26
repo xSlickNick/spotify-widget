@@ -139,13 +139,16 @@ function UpdatePlayer(data) {
 
 	if (songUri != currentSongUri) {		
 		if (isPlaying) {
-			SetVisibility(true);
-	
-			if (visibilityDuration > 0) {
-				setTimeout(() => {
-					SetVisibility(false, false);
-				}, visibilityDuration * 1000);
-			}
+			console.debug("Showing player...");
+			setTimeout(() => {
+				SetVisibility(true);
+
+				if (visibilityDuration > 0) {
+					setTimeout(() => {
+						SetVisibility(false, false);
+					}, visibilityDuration * 1000);
+				}
+			}, 500);
 	
 			currentSongUri = songUri;
 		}
