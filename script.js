@@ -127,7 +127,7 @@ function UpdatePlayer(data) {
 
 				if (visibilityDuration > 0) {
 					setTimeout(() => {
-						SetVisibility(false);
+						SetVisibility(false, false);
 					}, visibilityDuration * 1000);
 				}
 			}, 500);
@@ -191,7 +191,7 @@ function ConvertSecondsToMinutesSoThatItLooksBetterOnTheOverlay(time) {
 	return `${minutes}:${('0' + seconds).slice(-2)}`;
 }
 
-function SetVisibility(isVisible) {
+function SetVisibility(isVisible, updateCurrentState = true) {
 	widgetVisibility = isVisible;
 
 	const mainContainer = document.getElementById("mainContainer");
@@ -204,7 +204,9 @@ function SetVisibility(isVisible) {
 		mainContainer.style.opacity = 0;
 		mainContainer.style.bottom = "calc(50% - 20px)";
 	}
-	currentState = isVisible;
+
+	if (updateCurrentState)
+		currentState = isVisible;
 }
 
 
