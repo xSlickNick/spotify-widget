@@ -14,6 +14,8 @@ const visibilityDuration = urlParams.get("duration") || 0;
 const hideAlbumArt = urlParams.has("hideAlbumArt");
 
 let currentState = false;
+let currentSongUri = "";
+
 
 
 /////////////////
@@ -102,6 +104,7 @@ async function GetCurrentlyPlaying(refreshInterval) {
 
 function UpdatePlayer(data) {
 	const isPlaying = data.is_playing;							// The play/pause state of the player
+	const songUri = data.item.uri;
 	const albumArt = data.item.album.images.length > 0 ?
 		`${data.item.album.images[0].url}`
 		: `images/placeholder-album-art.png`;					// The album art URL
@@ -131,6 +134,20 @@ function UpdatePlayer(data) {
 					}, visibilityDuration * 1000);
 				}
 			}, 500);
+		}
+	}
+
+	if (songUri != currentSongUri) {		
+		if (!isPlaying) {
+			SetVisibility(true);
+	
+			if (visibilityDuration > 0) {
+				setTimeout(() => {
+					SetVisibility(false, false);
+				}, visibilityDuration * 1000);
+			}
+	
+			currentSongUri = songUri;
 		}
 	}
 
