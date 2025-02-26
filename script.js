@@ -138,7 +138,7 @@ function UpdatePlayer(data) {
 	}
 
 	if (songUri != currentSongUri) {		
-		if (!isPlaying) {
+		if (isPlaying) {
 			SetVisibility(true);
 	
 			if (visibilityDuration > 0) {
