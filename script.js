@@ -124,6 +124,12 @@ function UpdatePlayer(data) {
 			console.debug("Showing player...");
 			setTimeout(() => {
 				SetVisibility(true);
+
+				if (visibilityDuration > 0) {
+					setTimeout(() => {
+						SetVisibility(false);
+					}, visibilityDuration * 1000);
+				}
 			}, 500);
 		}
 	}
