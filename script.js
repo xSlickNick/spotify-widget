@@ -243,7 +243,7 @@ window.addEventListener("resize", resize);
 
 resize();
 function resize() {
-	const scale = window.innerWidth / maxWidth;
+	const scale = 4;
 	outer.style.transform = 'translate(-50%, 50%) scale(' + scale + ')';
 }
 
