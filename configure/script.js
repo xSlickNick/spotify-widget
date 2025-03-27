@@ -7,7 +7,7 @@ const urlParams = new URLSearchParams(queryString);
 
 const code = urlParams.get("code") || "";
 
-const baseURL = "https://xslicknick.github.io/Large-Spotify-Widget";
+const baseURL = "https://xslicknick.github.io/Spotify-Widget";
 const redirect_uri = `${baseURL}/configure`;
 let refresh_token = "";
 let access_token = "";
